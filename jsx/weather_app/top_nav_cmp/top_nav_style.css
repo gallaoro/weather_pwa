@@ -1,13 +1,14 @@
 #top-nav{
   display: flex;
   width: 100%;
-  min-height: 56px;
-  height: 56px;
+  height: 10vh;
   background-color: lightskyblue;
 }
 #top-nav img{
-  max-height: 50px;
+  max-width: 100%;
+  max-height: 90%;
   padding: 3px;
+  content: url('../../../images/logo.png');
 }
 #top-logo{
   flex-grow: 1;
@@ -18,4 +19,8 @@
 #top-options{
   flex-grow: 1;
   text-align: right;
+}
+
+#top-options img{
+  content: url('../../../images/menu.png');
 }

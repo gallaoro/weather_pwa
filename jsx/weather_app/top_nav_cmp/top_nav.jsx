@@ -5,13 +5,13 @@ class TopNav extends React.Component{
   render(){
     return <div id="top-nav">
       <div id="top-logo">
-        <img srcSet="http://via.placeholder.com/150x150.png" alt="logo"/>
+        <img alt="logo"/>
       </div>
       <div id="top-search">
         Trento it
       </div>
       <div id="top-options">
-        <img srcSet="http://via.placeholder.com/150x150.png" alt="logo"/>
+        <img alt="logo"/>
       </div>
     </div>
   }
