@@ -1,0 +1,22 @@
+#details-wth{
+  position: fixed;
+  bottom: 104px; 
+  width: 100%;
+  height: 220px;
+  z-index: 5;
+  background-color: rgba(32, 178, 171, 0.349);
+  display: grid;
+  grid-template-rows: auto 10% 20%; 
+}
+
+#details-wth :nth-child(1){
+  grid-row: 1 / 2;
+}
+
+#details-wth :nth-child(2){
+  grid-row: 2 / 3;
+}
+
+#details-wth :nth-child(3){
+  grid-row: 3 / 4;
+}

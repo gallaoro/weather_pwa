@@ -1,0 +1,12 @@
+#essential-wth{
+  min-height: 200px;
+  max-height: 400px;
+  background-image: url("../../../../images/sunny.jpg")
+}
+
+#essential-wth-text{
+  min-height: 100px;
+  min-width: 100px;
+  max-width: 40%;
+  text-align: right;
+}

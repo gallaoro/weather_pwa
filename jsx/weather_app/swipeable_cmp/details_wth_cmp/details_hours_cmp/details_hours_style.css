@@ -1,0 +1,7 @@
+#details-hours{
+  display: flex;
+}
+#details-hours div{
+  width: 12.5%;
+  text-align: center;
+}

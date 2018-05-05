@@ -1,0 +1,32 @@
+{
+  "name": "weather_pwa_3",
+  "version": "1.0.0",
+  "description": "A weather pwa",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack -w"
+  },
+  "author": "lellefood",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "6.13.2",
+    "babel-loader": "6.4.1",
+    "babel-preset-react": "6.5.0",
+    "classnames": "^2.2.5",
+    "css-loader": "0.23.1",
+    "file-loader": "^1.1.11",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "style-loader": "0.13.1",
+    "webpack": "2.4.1",
+    "webpack-dev-server": "2.4.2"
+  },
+  "dependencies": {
+    "react-swipeable-views": "^0.12.13"
+  }
+}
