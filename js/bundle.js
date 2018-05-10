@@ -14550,8 +14550,30 @@ class DetailsPreview extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
     this.state = this.props;
   }
 
+  getPreviewDivs() {
+    function extractIconCode(elem) {
+      return elem.weather[0].icon;
+    }
+    function addFilePath(elem) {
+      return "./images/icons/" + elem + ".svg";
+    }
+    function toDivWithImage(elem) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: elem }),
+        ">"
+      );
+    }
+    return this.state.forecasts.map(extractIconCode).map(addFilePath).map(toDivWithImage);
+  }
+
   render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { id: "details-preview" });
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      { id: "details-preview" },
+      this.getPreviewDivs()
+    );
   }
 }
 
@@ -16141,7 +16163,7 @@ exports = module.exports = __webpack_require__(29)();
 
 
 // module
-exports.push([module.i, "#details-wth{\n  position: fixed;\n  bottom: 48px; \n  width: 100%;\n  height: 220px;\n  z-index: 5;\n  background-color: rgba(32, 178, 171, 0.349);\n  display: grid;\n  grid-template-rows: auto 10% 20%; \n}\n\n#details-wth :nth-child(1){\n  grid-row: 1 / 2;\n}\n\n#details-wth :nth-child(2){\n  grid-row: 2 / 3;\n}\n\n#details-wth :nth-child(3){\n  grid-row: 3 / 4;\n}", ""]);
+exports.push([module.i, "#details-wth{\n  position: fixed;\n  bottom: 48px; \n  width: 100%;\n  height: 220px;\n  z-index: 5;\n  display: grid;\n  grid-template-rows: auto 10% 20%; \n}\n\n#details-wth :nth-child(1){\n  grid-row: 1 / 2;\n}\n\n#details-wth :nth-child(2){\n  grid-row: 2 / 3;\n}\n\n#details-wth :nth-child(3){\n  grid-row: 3 / 4;\n}", ""]);
 
 // exports
 
@@ -47230,7 +47252,7 @@ exports = module.exports = __webpack_require__(29)();
 
 
 // module
-exports.push([module.i, "#details-preview{\n  display: flex;\n  font-weight: 400;\n}\n#details-preview div{\n  width: 12.5%;\n  text-align: center;\n}", ""]);
+exports.push([module.i, "#details-preview{\n  display: flex;\n  font-weight: 400;\n}\n#details-preview div{\n  width: 12.5%;\n  text-align: center;\n  padding: 2px;\n}\n#details-preview img{\n  max-width: 100%\n}", ""]);
 
 // exports
 

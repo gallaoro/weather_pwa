@@ -5,4 +5,8 @@
 #details-preview div{
   width: 12.5%;
   text-align: center;
+  padding: 2px;
+}
+#details-preview img{
+  max-width: 100%
 }

@@ -7,9 +7,22 @@ class DetailsPreview extends React.Component{
     this.state = this.props;
   }
 
+  getPreviewDivs(){
+    function extractIconCode(elem){
+      return elem.weather[0].icon
+    }
+    function addFilePath(elem){
+      return "./images/icons/" + elem + ".svg"
+    }
+    function toDivWithImage(elem){
+      return <div><img src={elem}/>></div>
+    }
+    return this.state.forecasts.map(extractIconCode).map(addFilePath).map(toDivWithImage)
+  }
+
   render(){
     return <div id="details-preview">
-      
+      {this.getPreviewDivs()}
     </div>
   }
 }
