@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 import style from "./details_hours_style.css"
 
@@ -20,6 +21,9 @@ class DetailsHours extends React.Component{
 
   render(){
     let nextHours=this.getNextHours(new Date().getHours());
+    if(this.props.tomorrow){
+      nextHours=this.getNextHours(moment(new Date()).add(24,'h'));
+    }
     let nextHoursDivs = nextHours.map((hour) =>
       <div key={hour}>{hour}:00</div>
     );

@@ -14192,7 +14192,7 @@ class DetailsChart extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
   }
 
   extractTemps() {
-    return this.props.forecasts.map(value => {
+    return this.state.forecasts.map(value => {
       return Math.trunc(value.main.temp);
     });
   }
@@ -14491,8 +14491,11 @@ DetailsChart.defaultProps = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__details_hours_style_css__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__details_hours_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__details_hours_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details_hours_style_css__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details_hours_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__details_hours_style_css__);
+
 
 
 
@@ -14515,6 +14518,9 @@ class DetailsHours extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
 
   render() {
     let nextHours = this.getNextHours(new Date().getHours());
+    if (this.props.tomorrow) {
+      nextHours = this.getNextHours(__WEBPACK_IMPORTED_MODULE_1_moment___default()(new Date()).add(24, 'h'));
+    }
     let nextHoursDivs = nextHours.map(hour => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
       { key: hour },
@@ -14550,6 +14556,10 @@ class DetailsPreview extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
     this.state = this.props;
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({ forecasts: props.forecasts });
+  }
+
   getPreviewDivs() {
     function extractIconCode(elem) {
       return elem.weather[0].icon;
@@ -14557,12 +14567,11 @@ class DetailsPreview extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
     function addFilePath(elem) {
       return "./images/icons/" + elem + ".svg";
     }
-    function toDivWithImage(elem) {
+    function toDivWithImage(elem, i) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "div",
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: elem }),
-        ">"
+        { key: i },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: elem })
       );
     }
     return this.state.forecasts.map(extractIconCode).map(addFilePath).map(toDivWithImage);
@@ -14863,7 +14872,7 @@ class DetailsWeather extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
       "div",
       { id: "details-wth" },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__details_chart_cmp_details_chart_jsx__["a" /* default */], { forecasts: this.props.forecasts }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__details_hours_cmp_details_hours_jsx__["a" /* default */], null),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__details_hours_cmp_details_hours_jsx__["a" /* default */], { tomorrow: this.props.tomorrow }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__details_preview_cmp_details_preview_jsx__["a" /* default */], { forecasts: this.props.forecasts })
     );
   }
@@ -14963,7 +14972,8 @@ class Swipeable extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "div",
           { className: "slidable" },
-          "slide n\xB02"
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__essential_wth_cmp_essential_wth_jsx__["a" /* default */], null),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__details_wth_cmp_details_wth_jsx__["a" /* default */], { tomorrow: true, forecasts: this.props.tomorrowForecasts })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "div",

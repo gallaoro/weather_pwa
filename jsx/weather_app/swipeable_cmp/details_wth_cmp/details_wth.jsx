@@ -8,7 +8,7 @@ class DetailsWeather extends React.Component{
   render(){
     return <div id="details-wth">
       <DetailsChart forecasts={this.props.forecasts}/>
-      <DetailsHours/>
+      <DetailsHours tomorrow={this.props.tomorrow}/>
       <DetailsPreview forecasts={this.props.forecasts}/>
     </div>
   }

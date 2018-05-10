@@ -26,7 +26,7 @@ class DetailsChart extends React.Component{
   }
 
   extractTemps(){
-    return this.props.forecasts.map((value)=>{return Math.trunc(value.main.temp)});
+    return this.state.forecasts.map((value)=>{return Math.trunc(value.main.temp)});
   }
 
   valuesToSVGPoints(values){

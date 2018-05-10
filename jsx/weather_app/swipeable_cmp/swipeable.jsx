@@ -32,7 +32,9 @@ class Swipeable extends React.Component{
         <EssentialWeather/>
         <DetailsWeather forecasts={this.props.next24HForecasts}/>
       </div>
-      <div className="slidable">slide n°2</div>
+      <div className="slidable">
+        <EssentialWeather/>
+        <DetailsWeather tomorrow forecasts={this.props.tomorrowForecasts}/></div>
       <div className="slidable">slide n°3</div>
     </SwipeableViews>
     <BottomNav handleClick={this.handleChange.bind(this)}/>
