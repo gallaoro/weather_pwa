@@ -14163,6 +14163,10 @@ class BottomNav extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_localforage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_chart_style_css__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_chart_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__details_chart_style_css__);
+
+
 
 
 
@@ -14211,7 +14215,7 @@ class DetailsChart extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
       { id: "details-chart" },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "svg",
-        { viewBox: "0 0 1200 600" },
+        { id: "chart", viewBox: "0 0 1200 600", preserveAspectRatio: "none" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("polyline", { points: this.valuesToSVGPoints(scaledValues), fill: "none", strokeWidth: "20", stroke: "#4279a5", strokeLinecap: "round" })
       )
     );
@@ -14514,7 +14518,8 @@ class DetailsHours extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
     let nextHoursDivs = nextHours.map(hour => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
       { key: hour },
-      hour
+      hour,
+      ":00"
     ));
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -14534,13 +14539,281 @@ class DetailsHours extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__details_preview_style_css__ = __webpack_require__(451);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__details_preview_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__details_preview_style_css__);
+
 
 
 class DetailsPreview extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props;
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { id: "details-preview" });
   }
 }
+
+DetailsPreview.defaultProps = {
+  forecasts: [{
+    "dt": 1524733200,
+    "main": {
+      "temp": 10.67,
+      "temp_min": 8.55,
+      "temp_max": 10.67,
+      "pressure": 881.88,
+      "sea_level": 1026.93,
+      "grnd_level": 881.88,
+      "humidity": 88,
+      "temp_kf": 2.13
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10d"
+    }],
+    "clouds": {
+      "all": 92
+    },
+    "wind": {
+      "speed": 0.37,
+      "deg": 330.001
+    },
+    "rain": {
+      "3h": 0.08709
+    },
+    "sys": {
+      "pod": "d"
+    },
+    "dt_txt": "2018-04-26 09:00:00"
+  }, {
+    "dt": 1524744000,
+    "main": {
+      "temp": 9.56,
+      "temp_min": 7.97,
+      "temp_max": 9.56,
+      "pressure": 881.7,
+      "sea_level": 1026.23,
+      "grnd_level": 881.7,
+      "humidity": 88,
+      "temp_kf": 1.6
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10d"
+    }],
+    "clouds": {
+      "all": 92
+    },
+    "wind": {
+      "speed": 0.66,
+      "deg": 312
+    },
+    "rain": {
+      "3h": 0.56584
+    },
+    "sys": {
+      "pod": "d"
+    },
+    "dt_txt": "2018-04-26 12:00:00"
+  }, {
+    "dt": 1524754800,
+    "main": {
+      "temp": 9.52,
+      "temp_min": 8.46,
+      "temp_max": 9.52,
+      "pressure": 881.53,
+      "sea_level": 1025.95,
+      "grnd_level": 881.53,
+      "humidity": 86,
+      "temp_kf": 1.06
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10d"
+    }],
+    "clouds": {
+      "all": 80
+    },
+    "wind": {
+      "speed": 0.71,
+      "deg": 0.000946045
+    },
+    "rain": {
+      "3h": 0.37096
+    },
+    "sys": {
+      "pod": "d"
+    },
+    "dt_txt": "2018-04-26 15:00:00"
+  }, {
+    "dt": 1524765600,
+    "main": {
+      "temp": 6.63,
+      "temp_min": 6.1,
+      "temp_max": 6.63,
+      "pressure": 882.14,
+      "sea_level": 1027.31,
+      "grnd_level": 882.14,
+      "humidity": 78,
+      "temp_kf": 0.53
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10d"
+    }],
+    "clouds": {
+      "all": 24
+    },
+    "wind": {
+      "speed": 0.76,
+      "deg": 2.00095
+    },
+    "rain": {
+      "3h": 0.0064599999999999
+    },
+    "sys": {
+      "pod": "d"
+    },
+    "dt_txt": "2018-04-26 18:00:00"
+  }, {
+    "dt": 1524776400,
+    "main": {
+      "temp": 4.91,
+      "temp_min": 4.91,
+      "temp_max": 4.91,
+      "pressure": 883.42,
+      "sea_level": 1029.58,
+      "grnd_level": 883.42,
+      "humidity": 81,
+      "temp_kf": 0
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10n"
+    }],
+    "clouds": {
+      "all": 100
+    },
+    "wind": {
+      "speed": 0.86,
+      "deg": 8.50052
+    },
+    "rain": {
+      "3h": 0.04702
+    },
+    "sys": {
+      "pod": "n"
+    },
+    "dt_txt": "2018-04-26 21:00:00"
+  }, {
+    "dt": 1524787200,
+    "main": {
+      "temp": 3.47,
+      "temp_min": 3.47,
+      "temp_max": 3.47,
+      "pressure": 883.3,
+      "sea_level": 1030.2,
+      "grnd_level": 883.3,
+      "humidity": 81,
+      "temp_kf": 0
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10n"
+    }],
+    "clouds": {
+      "all": 88
+    },
+    "wind": {
+      "speed": 0.66,
+      "deg": 6.50031
+    },
+    "rain": {
+      "3h": 0.2047
+    },
+    "sys": {
+      "pod": "n"
+    },
+    "dt_txt": "2018-04-27 00:00:00"
+  }, {
+    "dt": 1524798000,
+    "main": {
+      "temp": 2.94,
+      "temp_min": 2.94,
+      "temp_max": 2.94,
+      "pressure": 882.89,
+      "sea_level": 1030.24,
+      "grnd_level": 882.89,
+      "humidity": 86,
+      "temp_kf": 0
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10n"
+    }],
+    "clouds": {
+      "all": 92
+    },
+    "wind": {
+      "speed": 0.71,
+      "deg": 347.003
+    },
+    "rain": {
+      "3h": 1.04581
+    },
+    "sys": {
+      "pod": "n"
+    },
+    "dt_txt": "2018-04-27 03:00:00"
+  }, {
+    "dt": 1524808800,
+    "main": {
+      "temp": 3.35,
+      "temp_min": 3.35,
+      "temp_max": 3.35,
+      "pressure": 882.89,
+      "sea_level": 1030.28,
+      "grnd_level": 882.89,
+      "humidity": 89,
+      "temp_kf": 0
+    },
+    "weather": [{
+      "id": 500,
+      "main": "Rain",
+      "description": "pioggia leggera",
+      "icon": "10d"
+    }],
+    "clouds": {
+      "all": 92
+    },
+    "wind": {
+      "speed": 0.32,
+      "deg": 15.5001
+    },
+    "rain": {
+      "3h": 0.62644
+    },
+    "sys": {
+      "pod": "d"
+    },
+    "dt_txt": "2018-04-27 06:00:00"
+  }]
+};
 
 /* harmony default export */ __webpack_exports__["a"] = (DetailsPreview);
 
@@ -14569,7 +14842,7 @@ class DetailsWeather extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
       { id: "details-wth" },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__details_chart_cmp_details_chart_jsx__["a" /* default */], { forecasts: this.props.forecasts }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__details_hours_cmp_details_hours_jsx__["a" /* default */], null),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__details_preview_cmp_details_preview_jsx__["a" /* default */], null)
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__details_preview_cmp_details_preview_jsx__["a" /* default */], { forecasts: this.props.forecasts })
     );
   }
 }
@@ -15854,7 +16127,7 @@ exports = module.exports = __webpack_require__(29)();
 
 
 // module
-exports.push([module.i, "#details-hours{\n  display: flex;\n}\n#details-hours div{\n  width: 12.5%;\n  text-align: center;\n}", ""]);
+exports.push([module.i, "#details-hours{\n  display: flex;\n  font-weight: 400;\n}\n#details-hours div{\n  width: 12.5%;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -46907,6 +47180,86 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 448 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(29)();
+// imports
+
+
+// module
+exports.push([module.i, "#chart{\n  max-height: 100%\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 449 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(448);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(33)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../../node_modules/css-loader/index.js!./details_chart_style.css", function() {
+			var newContent = require("!!../../../../../node_modules/css-loader/index.js!./details_chart_style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 450 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(29)();
+// imports
+
+
+// module
+exports.push([module.i, "#details-preview{\n  display: flex;\n  font-weight: 400;\n}\n#details-preview div{\n  width: 12.5%;\n  text-align: center;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 451 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(450);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(33)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../../node_modules/css-loader/index.js!./details_preview_style.css", function() {
+			var newContent = require("!!../../../../../node_modules/css-loader/index.js!./details_preview_style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

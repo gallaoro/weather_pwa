@@ -2,6 +2,8 @@ import React from "react";
 import localForage from "localforage"
 import moment from "moment"
 
+import style from "./details_chart_style.css"
+
 class DetailsChart extends React.Component{
   constructor(props){
     super(props)
@@ -41,7 +43,7 @@ class DetailsChart extends React.Component{
   render(){
     let scaledValues=this.scaleTemps()
     return <div id="details-chart">
-      <svg viewBox="0 0 1200 600">
+      <svg id="chart" viewBox="0 0 1200 600" preserveAspectRatio="none">
       <polyline points={this.valuesToSVGPoints(scaledValues)} fill="none" strokeWidth="20" stroke="#4279a5" strokeLinecap="round"></polyline>
       </svg>
     </div>

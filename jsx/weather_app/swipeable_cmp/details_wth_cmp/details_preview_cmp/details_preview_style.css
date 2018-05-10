@@ -1,8 +1,8 @@
-#details-hours{
+#details-preview{
   display: flex;
   font-weight: 400;
 }
-#details-hours div{
+#details-preview div{
   width: 12.5%;
   text-align: center;
 }

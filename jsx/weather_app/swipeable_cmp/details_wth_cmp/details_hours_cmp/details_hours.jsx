@@ -21,7 +21,7 @@ class DetailsHours extends React.Component{
   render(){
     let nextHours=this.getNextHours(new Date().getHours());
     let nextHoursDivs = nextHours.map((hour) =>
-      <div key={hour}>{hour}</div>
+      <div key={hour}>{hour}:00</div>
     );
 
     return <div id="details-hours">
