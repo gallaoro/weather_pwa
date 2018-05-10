@@ -30,7 +30,7 @@ class Swipeable extends React.Component{
     <SwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex.bind(this)}>
       <div className="slidable">
         <EssentialWeather/>
-        <DetailsWeather/>
+        <DetailsWeather forecasts={this.props.next24HForecasts}/>
       </div>
       <div className="slidable">slide n°2</div>
       <div className="slidable">slide n°3</div>

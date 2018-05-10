@@ -15,6 +15,7 @@
 }
 #top-search{
   flex-grow: 6;
+  align-self: center;
 }
 #top-options{
   flex-grow: 1;

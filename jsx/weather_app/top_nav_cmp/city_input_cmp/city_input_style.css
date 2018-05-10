@@ -1,0 +1,15 @@
+#city-input{
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
+  padding: 0 0 0 8px;
+  margin: 0;
+  border-bottom: 2px solid #4279a5;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #4279a5;
+}
+
+#city-input:focus{
+  border-bottom: 3px solid #4279a5;
+}

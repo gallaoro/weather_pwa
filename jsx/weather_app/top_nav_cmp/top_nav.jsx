@@ -1,4 +1,7 @@
 import React from "react";
+
+import CityInput from "./city_input_cmp/city_input.jsx"
+
 import style from "./top_nav_style.css";
 
 class TopNav extends React.Component{
@@ -8,7 +11,7 @@ class TopNav extends React.Component{
         <img alt="logo"/>
       </div>
       <div id="top-search">
-        Trento it
+        <CityInput query={this.props.query}/>
       </div>
       <div id="top-options">
         <img alt="logo"/>

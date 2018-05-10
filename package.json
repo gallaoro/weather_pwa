@@ -20,6 +20,8 @@
     "classnames": "^2.2.5",
     "css-loader": "0.23.1",
     "file-loader": "^1.1.11",
+    "localforage": "^1.7.1",
+    "moment": "^2.22.1",
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "style-loader": "0.13.1",
@@ -28,6 +30,7 @@
     "webpack-dev-server": "2.4.2"
   },
   "dependencies": {
+    "npm": "^6.0.0",
     "react-swipeable-views": "^0.12.13"
   }
 }
