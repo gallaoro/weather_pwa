@@ -4,7 +4,8 @@
   min-height: 48px;
   position: fixed;
   bottom: 0;
-  background-color: lightskyblue;
+  background-color: #6002ee;
+  color: #fff
 }
 .bottom-nav-elem{
   width: 33.33333334%;

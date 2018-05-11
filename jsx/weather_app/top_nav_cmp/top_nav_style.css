@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   height: 10vh;
-  background-color: lightskyblue;
+  background-color: #6002ee;
 }
 #top-nav img{
   max-width: 100%;
@@ -16,6 +16,7 @@
 #top-search{
   flex-grow: 6;
   align-self: center;
+  color: #fff;
 }
 #top-options{
   flex-grow: 1;

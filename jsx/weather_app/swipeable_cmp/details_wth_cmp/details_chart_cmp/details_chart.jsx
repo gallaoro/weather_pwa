@@ -44,7 +44,7 @@ class DetailsChart extends React.Component{
     let scaledValues=this.scaleTemps()
     return <div id="details-chart">
       <svg id="chart" viewBox="0 0 1200 600" preserveAspectRatio="none">
-      <polyline points={this.valuesToSVGPoints(scaledValues)} fill="none" strokeWidth="20" stroke="#4279a5" strokeLinecap="round"></polyline>
+      <polyline points={this.valuesToSVGPoints(scaledValues)} fill="none" strokeWidth="20" stroke="#fff" strokeLinecap="round"></polyline>
       </svg>
     </div>
   }
