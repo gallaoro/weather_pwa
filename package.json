@@ -24,8 +24,10 @@
     "moment": "^2.22.1",
     "react": "15.5.4",
     "react-dom": "15.5.4",
+    "react-three": "^0.9.7",
     "style-loader": "0.13.1",
     "svg-loader": "0.0.2",
+    "three": "^0.92.0",
     "webpack": "2.4.1",
     "webpack-dev-server": "2.4.2"
   },

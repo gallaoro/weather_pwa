@@ -69,8 +69,8 @@ class WeatherApp extends React.Component{
         localForage.setItem('storedForecasts', json)
           .then(console.log("Next weather stored"))
         this.setState({
-          temp: Math.trunc(json.list[0].main.temp),
-          humidity: Math.trunc(json.list[0].main.humidity)
+          act_temp: Math.trunc(json.list[0].main.temp),
+          act_clouds: Math.trunc(json.list[0].clouds.all)
         })
       })
       .catch((err)=>{
